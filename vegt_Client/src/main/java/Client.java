@@ -9,7 +9,7 @@ public class Client {
         String hostName = "127.0.0.1";
         int portNumber = 8000;
 
-
+        // Initialization
         Socket echoSocket = new Socket(hostName, portNumber);
         PrintWriter out = new PrintWriter(echoSocket.getOutputStream(), true);
         BufferedReader in = new BufferedReader(new InputStreamReader(echoSocket.getInputStream()));
