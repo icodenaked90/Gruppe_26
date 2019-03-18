@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/CDIO2reference/CDIO2reference.iml" filepath="$PROJECT_DIR$/CDIO2reference/CDIO2reference.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Gruppe_26.iml" filepath="$PROJECT_DIR$/.idea/Gruppe_26.iml" />
       <module fileurl="file://$PROJECT_DIR$/vegt_Client/vegt_Client.iml" filepath="$PROJECT_DIR$/vegt_Client/vegt_Client.iml" />
     </modules>
