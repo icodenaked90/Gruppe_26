@@ -15,7 +15,7 @@ public class Client {
         BufferedReader in = new BufferedReader(new InputStreamReader(echoSocket.getInputStream()));
         BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in));
 
-
+        System.out.println("Is connected: "+echoSocket.isConnected());
     }
 
 }
