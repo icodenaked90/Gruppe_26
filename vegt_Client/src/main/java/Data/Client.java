@@ -20,6 +20,7 @@ public class Client {
         System.out.println("connection to server: "+echoSocket.isConnected());
         String userInput;
         System.out.print("User: ");
+
         while ((userInput = stdIn.readLine()) != null) {
             out.println(userInput);
             System.out.println("Server: " + in.readLine());
