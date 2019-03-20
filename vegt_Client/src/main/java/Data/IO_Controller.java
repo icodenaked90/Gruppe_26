@@ -1,10 +1,12 @@
+package Data;
+
 public class IO_Controller {
 
-    // IO_Controller Attributter:
+    // Data.IO_Controller Attributter:
     public final Runnable typeA;
     public final Runnable typeB;
 
-    // IO_Controller Constructor:
+    // Data.IO_Controller Constructor:
     public IO_Controller() {
         typeA = new Runnable() {
             public void run() {
@@ -21,12 +23,12 @@ public class IO_Controller {
         };
     }
 
-    // IO_Controller metoder:
+    // Data.IO_Controller metoder:
 
     // Koden til 1. tråd i metoden herunder. Kunnne renames til getInput, Input eller lign.
     public void getInformationOfTypeA(){
         // get information of type A
-        // return the data or directly store in IO_Controller.
+        // return the data or directly store in Data.IO_Controller.
 
         // eksempel
         System.out.println("Print fra tråd A");
@@ -36,7 +38,7 @@ public class IO_Controller {
     // Koden til 2. tråd i metoden herunder. Kunne renames til setOutput, Output eller lign.
     public void getInformationOfTypeB(){
         // get information of type B
-        // return the data or directly store in IO_Controller.
+        // return the data or directly store in Data.IO_Controller.
 
         // eksempel
         System.out.println("Print fra tråd B");
