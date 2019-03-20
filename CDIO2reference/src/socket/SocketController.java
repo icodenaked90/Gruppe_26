@@ -51,7 +51,8 @@ public class SocketController implements ISocketController {
 		//TODO some logic for listening to a socket //(Using try with resources for auto-close of socket)
 		try (ServerSocket listeningSocket = new ServerSocket(PORT)){ 
 			while (true){
-				waitForConnections(listeningSocket); 	
+				waitForConnections(listeningSocket);
+				sendMessage(new SocketOutMessage("give me your money bitch"));
 			}		
 		} catch (IOException e1) {
 			// TODO Maybe notify MainController?
