@@ -77,5 +77,13 @@ public class TUI {
         scan.close(); // close scanner
     }
 
+    public int getUsernumber(){
+        return usernumber;
+    }
+
+    public int getbatchnumber() {
+        return batchnumber;
+    }
+
 
 }
