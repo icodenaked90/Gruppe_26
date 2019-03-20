@@ -15,7 +15,16 @@ public class Client {
         BufferedReader in = new BufferedReader(new InputStreamReader(echoSocket.getInputStream()));
         BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in));
 
-        System.out.println("Is connected: "+echoSocket.isConnected());
+        System.out.println("connection to server: "+echoSocket.isConnected());
+        String userInput;
+        System.out.print("User: ");
+        while ((userInput = stdIn.readLine()) != null) {
+            out.println(userInput);
+            System.out.println("Server: " + in.readLine());
+            System.out.println();
+            System.out.print("User: ");
+        }
+
     }
 
 }
