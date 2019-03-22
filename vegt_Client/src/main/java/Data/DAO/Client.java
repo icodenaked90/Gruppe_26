@@ -8,7 +8,7 @@ import java.net.Socket;
 
 // Det er meningen, at I kun bruger kommandoerne S, T, D, DW, P111 og RM20 8.
 
-public class Client {
+public class Client implements IClientDAO {
 
     // Fields
     String hostName = "127.0.0.1";
@@ -50,20 +50,22 @@ public class Client {
     }
 
 
-    public void getWeight() // S crlf			           			S S        5.234 kg  crlf //returnerer hvad vægten er lige nu
+    public double getWeight() // S crlf			           			S S        5.234 kg  crlf //returnerer hvad vægten er lige nu
     {
+
+        return 0;
+    }
+
+    public double getTaraWeight() // T crlf			    				T S        1.234 kg  crlf //vægt tarares
+    {
+
+        return 0;
+    }
+
+    public void printOnWeightDisplay(String text) { // D ”TEST” crlf		    			D A crlf     // skriver TEST i veje display
 
     }
 
-    public void getTaraWeight() // T crlf			    				T S        1.234 kg  crlf //vægt tarares
-    {
-
-    }
-
-    public void printOnWeightDisplay() // D ”TEST” crlf		    			D A crlf     // skriver TEST i veje display
-    {
-
-    }
 
     public void printOnTextDisplay(String text) throws IOException // P111 ”TEST” crlf					P111 A crlf (plads op til 30 karakterer)
     {

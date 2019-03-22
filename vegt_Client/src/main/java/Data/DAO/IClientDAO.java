@@ -1,5 +1,7 @@
 package Data.DAO;
 
+import java.io.IOException;
+
 public interface IClientDAO {
 
 
@@ -12,7 +14,7 @@ public interface IClientDAO {
     void printOnWeightDisplay(String text); // D ”TEST” crlf		    			D A crlf     // skriver TEST i veje display
 
 
-    void printOnTextDisplay(String text); // P111 ”TEST” crlf					P111 A crlf (plads op til 30 karakterer)
+    void printOnTextDisplay(String text) throws IOException; // P111 ”TEST” crlf					P111 A crlf (plads op til 30 karakterer)
 
 
     void displayWeight(); // DW crlf			    				DW A  crlf //retunerer/skifter til vægt visning
