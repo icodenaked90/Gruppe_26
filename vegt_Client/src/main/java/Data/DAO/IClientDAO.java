@@ -5,7 +5,7 @@ import java.io.IOException;
 public interface IClientDAO {
 
 
-    double getWeight(); // S crlf			           			S S        5.234 kg  crlf //returnerer hvad vægten er lige nu
+    double getWeight() throws IOException; // S crlf			           			S S        5.234 kg  crlf //returnerer hvad vægten er lige nu
 
 
     double getTaraWeight(); // T crlf			    				T S        1.234 kg  crlf //vægt tarares

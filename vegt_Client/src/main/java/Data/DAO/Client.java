@@ -21,7 +21,10 @@ public class Client implements IClientDAO {
     public static void main(String[] args) {
         try {
             Client client = new Client();
-            client.manuelIndtastning();
+
+            System.out.println("Filtreret double: "+client.getWeight());
+
+            //client.manuelIndtastning();
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -50,10 +53,23 @@ public class Client implements IClientDAO {
     }
 
 
-    public double getWeight() // S crlf			           			S S        5.234 kg  crlf //returnerer hvad vægten er lige nu
+    public double getWeight() throws IOException // S crlf			           			S S        5.234 kg  crlf //returnerer hvad vægten er lige nu
     {
+        out.println("S crlf");
+        out.flush();
 
-        return 0;
+        String weightStr = in.readLine();
+        System.out.println("Ufiltreret String: "+weightStr);
+
+
+        weightStr = weightStr.replaceAll("[^0-9.-]", "");
+
+
+        System.out.println("Filtreret String: "+weightStr);
+
+        double weight = Double.parseDouble(weightStr);
+
+        return weight;
     }
 
     public double getTaraWeight() // T crlf			    				T S        1.234 kg  crlf //vægt tarares
