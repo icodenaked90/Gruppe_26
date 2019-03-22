@@ -9,10 +9,10 @@ public interface IClientDAO {
     double getTaraWeight(); // T crlf			    				T S        1.234 kg  crlf //vægt tarares
 
 
-    void printOnWeightDisplay(); // D ”TEST” crlf		    			D A crlf     // skriver TEST i veje display
+    void printOnWeightDisplay(String text); // D ”TEST” crlf		    			D A crlf     // skriver TEST i veje display
 
 
-    void printOnTextDisplay(); // P111 ”TEST” crlf					P111 A crlf (plads op til 30 karakterer)
+    void printOnTextDisplay(String text); // P111 ”TEST” crlf					P111 A crlf (plads op til 30 karakterer)
 
 
     void displayWeight(); // DW crlf			    				DW A  crlf //retunerer/skifter til vægt visning
