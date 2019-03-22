@@ -8,16 +8,16 @@ public interface IClientDAO {
     double getWeight() throws IOException; // S crlf			           			S S        5.234 kg  crlf //returnerer hvad vægten er lige nu
 
 
-    double getTaraWeight(); // T crlf			    				T S        1.234 kg  crlf //vægt tarares
+    double getTaraWeight() throws IOException; // T crlf			    				T S        1.234 kg  crlf //vægt tarares
 
 
-    void printOnWeightDisplay(String text); // D ”TEST” crlf		    			D A crlf     // skriver TEST i veje display
+    void printOnWeightDisplay(String text) throws IOException; // D ”TEST” crlf		    			D A crlf     // skriver TEST i veje display
 
 
     void printOnTextDisplay(String text) throws IOException; // P111 ”TEST” crlf					P111 A crlf (plads op til 30 karakterer)
 
 
-    void displayWeight(); // DW crlf			    				DW A  crlf //retunerer/skifter til vægt visning
+    void displayWeight() throws IOException; // DW crlf			    				DW A  crlf //retunerer/skifter til vægt visning
 
 
     //RM20 8 ”INDTAST NR” ”” ”&3” crlf  			RM20 B crlf

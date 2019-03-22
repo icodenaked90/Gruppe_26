@@ -14,19 +14,41 @@ public class Client implements IClientDAO {
     String hostName = "127.0.0.1";
     int portNumber = 8000;
 
-    public Client() throws IOException { // Midlertidig løsning
+    public Client() throws IOException,InterruptedException { // Midlertidig løsning
     }
 
     // Midlertidig main til testing
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException{
         try {
             Client client = new Client();
 
-            System.out.println("Filtreret double: "+client.getWeight());
+            client.printOnTextDisplay("Indtast operatørnummer");
+            // Brugeren indtaster deres nummer. Brug evt. scanner til at modtage og gemme
+            client.printOnTextDisplay("Indtast batch nummer");
+            // Brugeren indtaster deres batchnummer med scanner
 
-            //client.manuelIndtastning();
+            client.printOnTextDisplay("Vægten skal nu være ubelastet. Tryk ok for at godkende.");
+            // Vægten tareres. Brugeren trykker enter.
+
+            client.printOnTextDisplay("Venligst placer beholder på vægten");
+            // Registrer vægten af beholderen
+            double tarWeight1 = client.getWeight(); // Vægten tareres
+
+            // Vægten vejer nu med beholder og produkt
+            client.printOnTextDisplay("Venligst placer beholderen med produktet på vægten");
+            double nettoWeight = client.getWeight(); // Nettovægten fås
+
+            // Vægten vejer nu uden noget på.
+            client.printOnTextDisplay("Venligst fjern beholderen fra vægten");
+            double bruttoWeight = client.getWeight(); // Bruttovægten fås
+
+            client.printOnTextDisplay("Alt er kasseret ordenligt. Farvel.");
+            // Vægten tareres igen.
+
 
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
