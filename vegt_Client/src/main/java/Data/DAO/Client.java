@@ -65,9 +65,10 @@ public class Client {
 
     }
 
-    public void printOnTextDisplay() // P111 ”TEST” crlf					P111 A crlf (plads op til 30 karakterer)
+    public void printOnTextDisplay(String text) throws IOException // P111 ”TEST” crlf					P111 A crlf (plads op til 30 karakterer)
     {
-
+        String command = "P111 \"";
+        out.println(command+text+"\"");
     }
 
     public void displayWeight() // DW crlf			    				DW A  crlf //retunerer til vægt visning
