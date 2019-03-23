@@ -28,7 +28,7 @@ public class Client implements IClientDAO {
     BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in));
 
     // Midlertidig main til testing
-    public static void main(String[] args) throws IOException {
+    public void run(){
         try {
             Client client = new Client();
             client.printOnTextDisplay("hello");
@@ -41,7 +41,7 @@ public class Client implements IClientDAO {
             int userID = scan.nextInt();
             if (userID >= 10 && userID < 100 && userID==user.getId()) {
                 int id = user.getId();
-                    if (id == userID) {
+                if (id == userID) {
                     client.printOnTextDisplay("Operatør: " + user.getName());
                     // Brugeren indtaster deres nummer. Brug evt. scanner til at modtage og gemme
                     Thread.sleep(3000);
@@ -84,7 +84,6 @@ public class Client implements IClientDAO {
             e.printStackTrace();
         }
     }
-
 
 
     // Methods
