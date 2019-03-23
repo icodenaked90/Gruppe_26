@@ -9,6 +9,9 @@ import java.util.Scanner;
 
 import Data.DTO.UserDTO;
 import Funktion.commController;
+import controller.*;
+import sun.applet.Main;
+
 // Det er meningen, at I kun bruger kommandoerne S, T, D, DW, P111 og RM20 8.
 @SuppressWarnings("Duplicates")
 public class Client implements IClientDAO {
@@ -36,6 +39,7 @@ public class Client implements IClientDAO {
 
             Scanner scan = new Scanner(System.in);
             client.printOnTextDisplay("Indtast operatørnummer");
+            client.readMessage();
             int userID = scan.nextInt();
             if (userID >= 10 && userID < 100) {
                 int id = user.getId();
@@ -82,6 +86,14 @@ public class Client implements IClientDAO {
 
 
     // Methods
+    public void readMessage()throws IOException{
+        String serverInput;
+        while (in.readLine()!=null){
+            serverInput = in.readLine();
+            System.out.println(serverInput);
+        }
+    }
+
     public void manuelIndtastning() throws IOException {
         System.out.println("connection to server: " + echoSocket.isConnected());
         String userInput;
