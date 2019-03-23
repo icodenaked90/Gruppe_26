@@ -2,15 +2,17 @@ package Data.DTO;
 
 public class UserDTO {
 
-    //Fields
+    // Fields
     int id;
     String name;
 
+    // Constructor
     public UserDTO() {
         this.id = 12;
         this.name = "Anders And";
     }
 
+    // Methods
     public int getId() {
         return id;
     }
