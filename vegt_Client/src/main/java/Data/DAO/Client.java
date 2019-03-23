@@ -9,7 +9,6 @@ import java.util.Scanner;
 
 import Data.DTO.UserDTO;
 import Funktion.commController;
-import controller.*;
 import sun.applet.Main;
 
 // Det er meningen, at I kun bruger kommandoerne S, T, D, DW, P111 og RM20 8.
@@ -39,37 +38,40 @@ public class Client implements IClientDAO {
 
             Scanner scan = new Scanner(System.in);
             client.printOnTextDisplay("Indtast operatørnummer");
-            client.readMessage();
             int userID = scan.nextInt();
-            if (userID >= 10 && userID < 100) {
+            if (userID >= 10 && userID < 100 && userID==user.getId()) {
                 int id = user.getId();
-                if (id == userID) {
+                    if (id == userID) {
                     client.printOnTextDisplay("Operatør: " + user.getName());
                     // Brugeren indtaster deres nummer. Brug evt. scanner til at modtage og gemme
                     Thread.sleep(3000);
                     client.printOnTextDisplay("Indtast batch nummer");
                     int batchID = scan.nextInt();
-                    client.printOnTextDisplay("Vægten skal nu være ubelastet. Tryk ok for at godkende.");
-                    // Vægten tareres. Brugeren trykker enter.
-                    Thread.sleep(3000);
+                    client.printOnTextDisplay("Vægten skal nu være ubelastet. Tryk enter for at godkende.");
+                    String accept = scan.nextLine();
+                    Thread.sleep(1000);
+                    client.printOnTextDisplay("Venligst placer beholder på vægten (brug slideren)"); // Vægten tareres. Brugeren trykker enter.
 
-                    client.printOnTextDisplay("Venligst placer beholder på vægten");
                     // Registrer vægten af beholderen
                     double tarWeight1 = client.getWeight(); // Vægten tareres
                     Thread.sleep(3000);
 
                     // Vægten vejer nu med beholder og produkt
-                    client.printOnTextDisplay("Venligst placer beholderen med produktet på vægten");
+                    client.printOnTextDisplay("Venligst placer beholderen med produktet på vægten (brug slideren)");
                     double nettoWeight = client.getWeight(); // Nettovægten fås
                     Thread.sleep(3000);
 
                     // Vægten vejer nu uden noget på.
-                    client.printOnTextDisplay("Venligst fjern beholderen fra vægten");
+                    client.printOnTextDisplay("Venligst fjern beholderen fra vægten (bevæg slideren helt til venstre)");
                     double bruttoWeight = client.getWeight(); // Bruttovægten fås
                     Thread.sleep(3000);
 
-                    client.printOnTextDisplay("Alt er kasseret ordenligt. Farvel.");
-                    // Vægten tareres igen.
+                    if(tarWeight1-nettoWeight==bruttoWeight){
+                        client.printOnTextDisplay("Alt er kasseret ordenligt. Farvel.");
+                        // Vægten tareres igen.
+                    }
+                    client.printOnTextDisplay("Vejningsprocessen stemmer ikke overens med indtastet data. Tryk for at prøve igen");
+
 
                 } else {
                     client.printOnTextDisplay("Der findes ingen bruger med id" + userID + ". Prøv igen");
@@ -151,9 +153,10 @@ public class Client implements IClientDAO {
 
     //RM20 8 ”INDTAST NR” ”” ”&3” crlf  			RM20 B crlf
     // Skriver INDTAST NR (lille display). Afventer indtastning (her 123), som så retunerer: RM20 A ”123” crlf
-    public void printOnSmallAndWait() //  Virker mærkelig at bruge - kan ikke finde ud af den.
+    public String printOnSmallAndWait() //  Virker mærkelig at bruge - kan ikke finde ud af den.
     {
 
+        return "nothing";
     }
 
 

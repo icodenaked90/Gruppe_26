@@ -9,13 +9,11 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
-import org.junit.Test;
 
 import socket.ISocketController;
 
 public class SocketTest {
 
-	@Test
 	public void test() throws InterruptedException {
 		try (Socket socket = new Socket("localhost",ISocketController.PORT)) {			
 			OutputStream sos = socket.getOutputStream();
