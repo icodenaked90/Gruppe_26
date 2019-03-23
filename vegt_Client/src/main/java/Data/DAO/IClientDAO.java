@@ -22,7 +22,7 @@ public interface IClientDAO {
 
     //RM20 8 ”INDTAST NR” ”” ”&3” crlf  			RM20 B crlf
     // Skriver INDTAST NR (lille display). Afventer indtastning (her 123), som så retunerer: RM20 A ”123” crlf
-    void printOnSmallAndWait(); //  Virker mærkelig at bruge - kan ikke finde ud af den.
+    String printOnSmallAndWait() throws IOException; //  Virker mærkelig at bruge - kan ikke finde ud af den.
 
 
 
